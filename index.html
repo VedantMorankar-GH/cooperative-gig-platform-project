@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Co-opGig cooperative household and community services marketplace prototype">
+<title>Co-opGig — Reliable Local Services</title>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="toast-root" aria-live="polite"></div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Co-opGig home"><span class="brand-mark">C</span><span>Co-op<span>Gig</span></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav id="mainNav">
+    <a href="#home" data-i18n="nav.home">Home</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#how" data-i18n="nav.how">How It Works</a>
+    <a href="#workers" data-i18n="nav.workers">For Workers</a>
+    <a href="#cooperative" data-i18n="nav.cooperative">About Cooperative</a>
+  </nav>
+  <div class="header-actions">
+    <select id="languageSelect" class="lang-select" aria-label="Language"><option value="en">🌐 English</option><option value="hi">🌐 हिन्दी</option><option value="mr">🌐 मराठी</option><option value="ta">🌐 தமிழ்</option><option value="te">🌐 తెలుగు</option></select>
+    <a class="btn btn-outline" href="login.html" data-i18n="nav.login">Login</a>
+    <button class="btn btn-primary" data-action="book" data-i18n="nav.book">Book a Service</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="eyebrow"><span class="pulse-dot"></span><span data-i18n="hero.eyebrow">Verified cooperative workforce</span></div>
+      <h1 data-i18n="hero.title">Reliable Local Services. Powered by Cooperatives.</h1>
+      <p data-i18n="hero.text">Book trusted local workers for household and community services while supporting cooperative employment.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary btn-lg" data-action="book" data-i18n="hero.cta">Book a Service <span>→</span></button>
+        <a class="btn btn-light btn-lg" href="#services" data-i18n="hero.explore">Explore Services</a>
+      </div>
+      <div class="hero-trust"><span>✓</span> <span data-i18n="hero.trust">Fictional demo data — frontend prototype</span></div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-image-card">
+        <div class="image-placeholder"><span class="person person-a">⚡</span><span class="person person-b">🔧</span><span class="person person-c">🧹</span></div>
+        <div class="floating-card fc-one"><strong>✓</strong><div><b>Verified Worker</b><small>Cooperative member</small></div></div>
+        <div class="floating-card fc-two"><strong>4.8★</strong><div><b>Top Rated</b><small>Demo rating</small></div></div>
+        <div class="floating-card fc-three"><strong>10–15 min</strong><div><b>Estimated arrival</b><small>Not a guarantee</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-strip">
+  <div class="container stats">
+    <div><strong data-count="10000">0+</strong><span data-i18n="stats.services">demo services completed</span></div>
+    <div><strong data-count="120">0+</strong><span data-i18n="stats.workers">verified demo workers</span></div>
+    <div><strong data-count="8">0</strong><span data-i18n="stats.coops">participating cooperatives</span></div>
+    <div><strong>4.8★</strong><span data-i18n="stats.rating">average demo rating</span></div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-heading reveal"><div><span class="eyebrow">SERVICES</span><h2 data-i18n="services.title">Everyday help, from people in your community.</h2></div><button class="text-link" data-action="book" data-i18n="services.view">Book from all services →</button></div>
+    <div class="service-grid" id="serviceGrid"></div>
+  </div>
+</section>
+
+<section class="section soft" id="how">
+  <div class="container">
+    <div class="section-heading center reveal"><span class="eyebrow">HOW IT WORKS</span><h2 data-i18n="how.title">Simple for customers. Fairer for workers.</h2></div>
+    <div class="steps">
+      <article class="step-card reveal"><span>01</span><div class="step-icon">📋</div><h3 data-i18n="how.s1">Tell us what you need</h3><p data-i18n="how.p1">Choose a service, describe the work and select a convenient location.</p></article>
+      <article class="step-card reveal"><span>02</span><div class="step-icon">👷</div><h3 data-i18n="how.s2">Choose a verified worker</h3><p data-i18n="how.p2">Compare skills, experience, ratings, reviews and approximate ETA.</p></article>
+      <article class="step-card reveal"><span>03</span><div class="step-icon">🤝</div><h3 data-i18n="how.s3">Inspection & estimate</h3><p data-i18n="how.p3">The worker inspects the requirement and submits a transparent estimate.</p></article>
+      <article class="step-card reveal"><span>04</span><div class="step-icon">✓</div><h3 data-i18n="how.s4">Complete & review</h3><p data-i18n="how.p4">Continue with the service, complete payment and leave a review.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="workers">
+  <div class="container feature-split">
+    <div class="feature-panel reveal"><span class="eyebrow">FOR WORKERS</span><h2 data-i18n="workers.title">A digital front door for cooperative talent.</h2><p data-i18n="workers.text">Workers can manage requests, availability, service status, earnings, reviews and customer conversations in one place.</p><div class="check-list"><span>✓ Verified cooperative identity</span><span>✓ Transparent service requests</span><span>✓ Availability controls</span><span>✓ Reviews and earnings</span></div><button class="btn btn-primary" data-role-login="worker">Worker Demo Dashboard →</button></div>
+    <div class="mini-dashboard reveal"><div class="mini-top"><b>Today's Work</b><span class="status-pill green">Available</span></div><div class="mini-kpis"><div><b>04</b><small>Jobs</small></div><div><b>₹2,850</b><small>Demo earnings</small></div><div><b>4.9★</b><small>Rating</small></div></div><div class="job-mini"><span class="avatar">AP</span><div><b>Electrical repair</b><small>Kothrud · 10–15 min</small></div><span class="status-pill amber">New</span></div><div class="job-mini"><span class="avatar">RM</span><div><b>Fan installation</b><small>Baner · 15–20 min</small></div><span class="status-pill green">Accepted</span></div></div>
+  </div>
+</section>
+
+<section class="section soft" id="cooperative">
+  <div class="container cooperative-grid">
+    <div class="co-op-illustration reveal"><div class="coop-ring">CO-OP</div><div class="coop-node n1">👷</div><div class="coop-node n2">🏠</div><div class="coop-node n3">🤝</div><div class="coop-node n4">📊</div></div>
+    <div class="reveal"><span class="eyebrow">THE COOPERATIVE MODEL</span><h2 data-i18n="coop.title">More than a marketplace.</h2><p data-i18n="coop.text">Co-opGig is designed around verified cooperative workers, local employment, transparent allocation and role-based coordination.</p><div class="model-grid"><div><b>Customer</b><small>Books & reviews</small></div><div><b>Worker</b><small>Serves & earns</small></div><div><b>Federation Administration</b><small>Coordinates locally</small></div><div><b>Federation</b><small>Aggregated oversight</small></div></div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container cta-box reveal"><div><span class="eyebrow">CO-OPGIG DEMO</span><h2 data-i18n="cta.title">Ready to experience the complete service journey?</h2><p data-i18n="cta.text">Try the customer flow or open any role dashboard using the demo login.</p></div><button class="btn btn-white btn-lg" data-action="book" data-i18n="cta.button">Start Booking →</button></div>
+</section>
+</main>
+<footer><div class="container footer-grid"><div><a class="brand" href="#"><span class="brand-mark">C</span><span>Co-op<span>Gig</span></span></a><p>Cooperative Gig Services Platform</p></div><div><b>Prototype</b><span>Frontend-only demo</span><span>Fictional data</span><span>No real payments</span></div><div><b>Privacy</b><span>Least-privilege access</span><span>Approximate worker locations</span><span>Demo LocalStorage only</span></div></div><div class="container copyright">© 2026 Co-opGig · SIH prototype · Not a production service</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/security.js"></script><script src="js/script.js"></script>
+</body>
+</html>
